@@ -125,6 +125,13 @@ a.logo { text-decoration: none; color: inherit; }
     line-height: 0.9;
 }
 
+/* New styles for multiple rates */
+.rates-list { list-style: none; padding: 0; margin: 6px 0 12px 0; display: grid; gap: 6px }
+.rates-list li { font-size: 20px; color: #e6eefc; display:flex; justify-content:space-between; align-items:center }
+.rate-item { font-size: 28px; font-weight:900; color: #f59e0b; margin-left: 12px }
+.bill-rate { font-size: 20px; color: #e6eefc; margin-bottom: 14px; display:flex; justify-content:space-between; align-items:center }
+.bill-rate .rate-item { font-size: 34px }
+
 .quote {
     background: rgba(255,255,255,0.04);
     border-radius: 18px;
@@ -133,6 +140,14 @@ a.logo { text-decoration: none; color: inherit; }
     margin-bottom: 22px;
     font-size: 15px;
     text-align: center;
+}
+
+.no-charges {
+    text-align: center;
+    color: #a7b4c8;
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 600;
 }
 
 /* BUTTONS */
@@ -184,6 +199,9 @@ a.logo { text-decoration: none; color: inherit; }
 
     /* reduce large rate number on small screens */
     .rate { font-size: 80px }
+    .rates-list li { font-size: 18px }
+    .rate-item { font-size: 24px }
+    .bill-rate .rate-item { font-size: 28px }
 }
 
 /* FEATURES */
