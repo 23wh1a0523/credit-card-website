@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hyderabad Credit Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="/" class="logo">
+            <img src="images/logo.svg" alt="VB Solutions" class="logo-img">
+        </a>
+        <a href="tel:9876543210" class="contact-btn">Call Now</a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+            <div class="badge">❤️ No.1 Ranked in Hyderabad</div>
+            <h1>Hyderabad's Trusted Credit Card Service.</h1>
+            <p>
+                Immediate cash liquidity with 100% security.
+                Join thousands of happy customers managing their cash flow daily.
+            </p>
+        </div>
+
+        <!-- RIGHT SIDE CARD -->
+        <div class="right">
+            <div class="offer-card">
+                <p class="small-title">IMMEDIATE SETTLEMENT GUARANTEED</p>
+                <h2>Withdrawals & Bill Payments</h2>
+
+                <div class="rate">2.5%</div>
+
+                <div class="quote">"Why worry about card payments? <strong>We're here for you!</strong> We pay your bills & you withdraw instantly at just <strong>2.5%</strong>."</div>
+
+                <div class="cta">
+                    <a href="https://wa.me/917995156349?text=Hi%20I%20want%20credit%20card%20cash" class="btn whatsapp" target="_blank">
+                        <span class="icon">📱</span>
+                        WhatsApp
+                    </a>
+
+                    <a href="tel:7995156349" class="btn call">
+                        <span class="icon">📞</span>
+                        Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
+        <div class="features-inner">
+            <h3 class="features-title">Why customers choose us</h3>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="f-icon">💳</div>
+                    <h4>Instant Withdrawals</h4>
+                    <p>Get cash from your credit card instantly with minimal charges.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="f-icon">🔒</div>
+                    <h4>100% Secure</h4>
+                    <p>Secure transactions and strict privacy for all customer data.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="f-icon">⚡</div>
+                    <h4>Fast Support</h4>
+                    <p>Local Hyderabad support available for speedy assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS / 4-STEP -->
+    <section class="process" id="process">
+        <div class="process-inner">
+            <h3 class="process-title">Professional 4-Step Process</h3>
+            <div class="process-grid">
+                <div class="process-item reveal">
+                    <div class="process-img-wrap">
+                        <img src="images/process1.png" alt="Consult">
+                    </div>
+                    <div class="process-number">1</div>
+                    <h4>Consult</h4>
+                    <p>Talk to Local Rep</p>
+                </div>
+
+                <div class="process-item reveal">
+                    <div class="process-img-wrap">
+                        <img src="images/process2.png" alt="Verify" class="process-img">
+                    </div>
+                    <div class="process-number">2</div>
+                    <h4>Verify</h4>
+                    <p>Quick Documentation</p>
+                </div>
+
+                <div class="process-item reveal">
+                    <div class="process-img-wrap">
+                        <img src="images/process3.png" alt="Swipe" class="process-img">
+                    </div>
+                    <div class="process-number">3</div>
+                    <h4>Swipe</h4>
+                    <p>Authorized Terminal</p>
+                </div>
+
+                <div class="process-item reveal">
+                    <div class="process-img-wrap">
+                        <img src="images/process4.png" alt="Receive" class="process-img">
+                    </div>
+                    <div class="process-number">4</div>
+                    <h4>Receive</h4>
+                    <p>Immediate Settlement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <script>
+        // Reveal on scroll using IntersectionObserver
+        (function(){
+            const items = document.querySelectorAll('.reveal');
+            if('IntersectionObserver' in window){
+                const io = new IntersectionObserver((entries)=>{
+                    entries.forEach(entry=>{
+                        if(entry.isIntersecting){
+                            entry.target.classList.add('visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, {threshold: 0.18});
+                items.forEach(i=>io.observe(i));
+            } else {
+                // fallback: reveal all
+                items.forEach(i=>i.classList.add('visible'));
+            }
+
+
+            // Detect swipe up on touch devices and scroll to features/process
+            let startY = 0;
+            document.addEventListener('touchstart', function(e){ startY = e.changedTouches[0].clientY; }, {passive:true});
+            document.addEventListener('touchend', function(e){
+                const endY = e.changedTouches[0].clientY;
+                if(startY - endY > 40){
+                    const features = document.getElementById('features');
+                    const process = document.getElementById('process');
+                    const scrollY = window.scrollY || window.pageYOffset;
+                    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+                    // If features not fully visible, scroll to features
+                    if(features && features.getBoundingClientRect().top - 20 > 0){
+                        features.scrollIntoView({behavior:'smooth'});
+                        return;
+                    }
+
+                    // Otherwise scroll to process
+                    if(process){ process.scrollIntoView({behavior:'smooth'}); }
+                }
+            }, {passive:true});
+
+            // also scroll on ArrowDown
+            document.addEventListener('keydown', function(e){ if(e.key === 'ArrowDown'){ const features = document.getElementById('features'); if(features) features.scrollIntoView({behavior:'smooth'}); }});
+        })();
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>About VB Solutions</h4>
+                <p>Hyderabad's trusted credit card service provider offering instant cash liquidity with 100% security.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#features">Why Choose Us</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="tel:7995156349">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>📱 <a href="tel:7995156349">+91 799-515-6349</a></li>
+                    <li>📧 <a href="mailto:info@vbsolutions.com">info@vbsolutions.com</a></li>
+                    <li>📍 Hyderabad, India</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" title="Facebook" class="social-icon">f</a>
+                    <a href="#" title="Instagram" class="social-icon">📷</a>
+                    <a href="#" title="WhatsApp" class="social-icon">💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 VB Solutions. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

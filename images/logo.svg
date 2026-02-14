@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="64" viewBox="0 0 280 64" role="img" aria-label="VB Solutions">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:0.05" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <style>
+      .vb-letter { font: 700 36px 'Inter', Arial, sans-serif; font-weight: 900; fill: white; }
+      .company-name { font: 700 24px 'Inter', Arial, sans-serif; font-weight: 800; fill: #0f172a; }
+      .company-sub { font: 500 11px 'Inter', Arial, sans-serif; fill: #64748b; letter-spacing: 0.5px; }
+    </style>
+  </defs>
+
+  <!-- Main Logo Box with black styling -->
+  <g filter="url(#shadow)">
+    <rect x="6" y="6" width="52" height="52" rx="8" fill="url(#grad1)" />
+    <rect x="6" y="6" width="52" height="26" rx="8" fill="url(#grad2)" opacity="0.4"/>
+    
+    <!-- Modern VB Text inside box -->
+    <text class="vb-letter" x="32" y="40" text-anchor="middle">VB</text>
+  </g>
+
+  <!-- Company Name Section -->
+  <g transform="translate(72, 0)">
+    <text class="company-name" x="0" y="26">VB Solutions</text>
+    <text class="company-sub" x="0" y="48">FINSERV</text>
+  </g>
+</svg>
